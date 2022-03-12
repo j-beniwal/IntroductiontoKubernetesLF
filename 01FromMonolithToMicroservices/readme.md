@@ -88,3 +88,13 @@ Although a challenging process, moving from monoliths to microservices is a rewa
 
 * [Pinterest](https://kubernetes.io/case-studies/pinterest/) - a social media services provider, started the refactoring process by first migrating their monolith API.
 
+### Learning Objectives (Review) ###
+
+You should now be able to:
+
+* Explain what a monolith is.
+* Discuss the monolith's challenges in the cloud.
+* Explain the concept of microservices.
+* Discuss microservices advantages in the cloud.
+* Describe the transformation path from a monolith to microservices.
+
