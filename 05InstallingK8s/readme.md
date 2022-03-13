@@ -96,6 +96,44 @@ Below are only a few of the [Turnkey Cloud Solutions](https://kubernetes.io/docs
 
 * Turnkey On-Premise Solutions
 The On-Premise Solutions install Kubernetes on secure internal private clouds:
-    * GKE On-Prem part of Google Cloud Anthos 
-    * IBM Private Cloud 
-    * OpenShift Container Platform by Red Hat. 
+    * [GKE On-Prem](https://cloud.google.com/anthos/gke/docs/on-prem) part of Google Cloud [Anthos](https://cloud.google.com/anthos)
+    * [IBM Private Cloud](https://www.ibm.com/cloud/learn/introduction-to-private-cloud)
+    * [OpenShift Container Platform](https://www.openshift.com/products/container-platform) by Red Hat. 
+
+### Kubernetes Installation Tools/Resources ###
+
+While discussing installation configuration and the underlying infrastructure, let's take a look at some useful installation tools available:
+
+* kubeadm
+[kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/) is a first-class citizen on the Kubernetes ecosystem. It is a secure and recommended method to bootstrap a multi-node production ready Highly Available Kubernetes cluster, on-prem or in the cloud. Kubeadm can also bootstrap a single-node cluster for learning. It has a set of building blocks to setup the cluster, but it is easily extendable to add more features. Please note that kubeadm does not support the provisioning of hosts. 
+
+* kubespray
+With [kubespray](https://kubernetes.io/docs/setup/production-environment/tools/kubespray/) (formerly known as kargo), we can install Highly Available production ready Kubernetes clusters on AWS, GCE, Azure, OpenStack, vSphere, or bare metal. Kubespray is based on Ansible, and is available on most Linux distributions. It is a [Kubernetes Incubator](https://github.com/kubernetes-sigs/kubespray) project. 
+
+* kops
+With kops, we can create, upgrade, and maintain production-grade, Highly Available Kubernetes clusters from the command line. It can provision the machines as well. Currently, AWS is officially supported. Support for GCE and OpenStack* is in beta, VMware vSphere is in alpha support, and other platforms are planned for the future. Explore the [kops project](https://github.com/kubernetes/kops) for more details. 
+
+* kube-aws
+With [kube-aws](https://github.com/kubernetes-incubator/kube-aws) we can create, upgrade and destroy Kubernetes clusters on AWS from the command line. Kube-aws is also a Kubernetes Incubator project. 
+
+In addition, for a manual installation approach, the [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way) GitHub project by [Kelsey Hightower](https://twitter.com/kelseyhightower) is an extremely helpful installation guide and resource. The project aims to teach all the detailed steps involved in the bootstrapping of a Kubernetes cluster. 
+
+### Kubernetes on Windows ###
+
+The Windows operating system plays a key role in running and managing enterprise applications and services. With that in mind, the Kubernetes community worked very hard to bring Windows support to Kubernetes. 
+
+With the release of Kubernetes v1.14, Windows was successfully introduced as a [supported](https://kubernetes.io/docs/setup/production-environment/windows/intro-windows-in-kubernetes/) production ready operating system only for worker nodes of a Kubernetes cluster. This enabled Kubernetes to support the deployment of Windows containers in the cluster, either as a dedicated Windows cluster, or a shared cluster with Windows nodes running alongside Linux nodes. Keep in mind, however, that the control plane nodes are limited to running on Linux only, with no plans to extend the support to Windows master nodes.
+
+With Windows Server 2019 being the only Windows OS supported by Kubernetes, the same container workload orchestration tool can [schedule](https://kubernetes.io/docs/setup/production-environment/windows/user-guide-windows-containers/) and deploy both Linux and Windows containers in the same cluster. The user is responsible to configure the workload scheduling according to the expected OS, that is to schedule Linux and Windows containers on nodes with their respective operating systems when nodes of each OS are found in the same Kubernetes cluster.
+
+## Learning Objectives (Review) ##
+
+### Learning Objectives (Review) ###
+
+You should now be able to:
+
+* Discuss Kubernetes configuration options.
+* Discuss infrastructure considerations before installing Kubernetes.
+* Discuss infrastructure choices for a Kubernetes cluster deployment.
+* Review Kubernetes installation tools and resources.
+
